@@ -1,0 +1,24 @@
+#name: content-staging
+#on:
+#  push:
+#    branches: [ master ]
+#jobs:
+#  deploy:
+#    name: Deploy to staging
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout Repo
+#        uses: actions/checkout@master
+#      - name: Install Firebase tools
+#        run: npm install firebase-tools
+#      - name: Install all npm dependencies
+#        run: npm install --prefix functions
+#      - name: Activate staging
+#        run: node_modules/firebase-tools/lib/bin/firebase.js use staging --token ${{ secrets.FIREBASE_TOKEN }}
+#      - name: Create GCP service account
+#        run: 'echo "$FIREBASE_ADMIN_SDK" > functions/gcp.json'
+#        shell: bash
+#        env:
+#          FIREBASE_ADMIN_SDK: ${{secrets.FIREBASE_ADMIN_SDK}}
+#      - name: Deploy to Firebase
+#        run: node_modules/firebase-tools/lib/bin/firebase.js deploy -P staging  --token ${{ secrets.FIREBASE_TOKEN }}
