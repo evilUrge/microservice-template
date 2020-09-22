@@ -1,10 +1,11 @@
-#name: microservice-staging
+#name: microservice-production
 #on:
 #  push:
-#    branches: [ master ]
+#    tags:
+#      - '*'
 #jobs:
 #  deploy:
-#    name: Deploy to staging
+#    name: Deploy to production
 #    runs-on: ubuntu-latest
 #    steps:
 #      - name: Checkout Repo
@@ -13,16 +14,16 @@
 #        run: npm install firebase-tools
 #      - name: Install all npm dependencies
 #        run: npm install --prefix functions
-#      - name: Activate staging
-#        run: node_modules/firebase-tools/lib/bin/firebase.js use staging --token ${{ secrets.FIREBASE_TOKEN }}
+#      - name: Activate production
+#        run: node_modules/firebase-tools/lib/bin/firebase.js use production --token ${{ secrets.FIREBASE_TOKEN }}
 #        env:
 #          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 #      - name: Create GCP service account
 #        run: 'echo "$FIREBASE_ADMIN_SDK" > functions/gcp.json'
 #        shell: bash
 #        env:
-#          FIREBASE_ADMIN_SDK: ${{secrets.STAGING_FIREBASE_ADMIN_SDK}}
+#          FIREBASE_ADMIN_SDK: ${{secrets.FIREBASE_ADMIN_SDK}}
 #      - name: Deploy to Firebase
-#        run: node_modules/firebase-tools/lib/bin/firebase.js deploy -P staging --only functions:microservice --token ${{ secrets.FIREBASE_TOKEN }}
+#        run: node_modules/firebase-tools/lib/bin/firebase.js deploy -P production --only functions:microservice --token ${{ secrets.FIREBASE_TOKEN }}
 #        env:
 #          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
