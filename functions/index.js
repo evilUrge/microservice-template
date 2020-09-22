@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV === 'development') {
-    require('dotenv').config({ path: `${require('path').join(__dirname, '.')}/.env` });
+    require('dotenv').config({path: `${require('path').join(__dirname, '.')}/.env`});
     const port = process.env.PORT || 3000;
     require('./src/server').listen(port);
     console.log(`Server is running on port ${port}`);
