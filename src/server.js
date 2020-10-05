@@ -35,5 +35,5 @@ module.exports = (() => {
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({extended: true}))
         .use(cors({origin: true}))
-        .use(router)
+        .use(isDev ? '/api': '', router)
 })();

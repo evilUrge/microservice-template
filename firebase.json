@@ -1,15 +1,5 @@
 {
-  "hosting": {
-    "target": "yadati-content",
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      { "source": "/", "destination": "/index.html" },
-      {"source": "**", "function": "yadati_content_microservice"}
-    ]
+  "functions": {
+    "source": "."
   }
 }

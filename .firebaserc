@@ -1,22 +1,6 @@
 {
   "projects": {
-    "staging": "parentsapp-2c5d8",
-    "production": "yadati-t2k"
-  },
-  "targets": {
-    "parentsapp-2c5d8": {
-      "hosting": {
-        "yadati-content": [
-          "content-microservice-staging"
-        ]
-      }
-    },
-    "yadati-t2k": {
-      "hosting": {
-        "yadati-content": [
-          "content-microservice"
-        ]
-      }
-    }
+    "staging": "staging-google-project-id",
+    "production": "google-project-id"
   }
 }

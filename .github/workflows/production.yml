@@ -13,13 +13,13 @@
 #      - name: Install Firebase tools
 #        run: npm install firebase-tools
 #      - name: Install all npm dependencies
-#        run: npm install --prefix functions
+#        run: npm install
 #      - name: Activate production
 #        run: node_modules/firebase-tools/lib/bin/firebase.js use production --token ${{ secrets.FIREBASE_TOKEN }}
 #        env:
 #          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 #      - name: Create GCP service account
-#        run: 'echo "$FIREBASE_ADMIN_SDK" > functions/gcp.json'
+#        run: 'echo "$FIREBASE_ADMIN_SDK" > gcp.json'
 #        shell: bash
 #        env:
 #          FIREBASE_ADMIN_SDK: ${{secrets.FIREBASE_ADMIN_SDK}}

@@ -1,25 +1,26 @@
 {
-  "name": "yadati_content_microservice",
+  "name": "microservice_template",
   "version": "1.0.0",
-  "description": "serving Yadati - content since 2020",
+  "description": "serving Yadati - since 2020",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "serve": "NODE_ENV=development node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IamYadati/content-microservice.git"
+    "url": "git+https://github.com/IamYadati/microservice-template.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IamYadati/content-microservice/issues"
+    "url": "https://github.com/IamYadati/microservice-template/issues"
   },
   "engines": {
     "node": "10"
   },
-  "homepage": "https://github.com/IamYadati/content-microservice#readme",
+  "homepage": "https://github.com/IamYadati/microservice-template#readme",
   "dependencies": {
     "@google-cloud/storage": "^5.1.2",
     "body-parser": "^1.19.0",
