@@ -32,5 +32,14 @@ module.exports = {
             let finalObj = {}
             arrayToObj.forEach(item => Object.assign(finalObj, {[item[key]]: item}))
             return finalObj
-        }
+        },
+    auth:
+        /**
+         * Authenticate the user before execute sensitive endpoints using firebase JWT implementation
+         * @param token Firebase client token
+         * @returns {Promise<* | boolean>}
+         */
+            (token) => firebase.auth().verifySessionCookie(token)
+            .then(decodedToken => decodedToken.uid || false)
+            .catch(() => false)
 }
