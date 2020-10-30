@@ -34,6 +34,7 @@ module.exports = (() => {
     return server
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({extended: true}))
+        .use(require('express-bearer-token')())
         .use(cors({origin: true}))
         .use(isDev ? '/api': '', router)
 })();
